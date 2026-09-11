@@ -1,0 +1,68 @@
+/* Fondo completo */
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #fffaf0, #fdf6f0);
+}
+
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* ocupa toda la pantalla */
+    background: linear-gradient(to bottom, #fffaf0, #fdf6f0);
+    /* tonos cálidos */
+    padding: 40px;
+}
+
+/* Texto principal */
+.intro-text {
+    font-family: 'Playfair Display', serif;
+    /* elegante y romántica */
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    /* responsive */
+    color: #6b1d1d;
+    /* burdeos */
+    margin-bottom: 30px;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+    text-align: center;
+}
+
+/* Corazón decorativo */
+.intro-heart {
+    font-size: 3rem;
+    color: #6b1d1d;
+    /* mismo color que el texto */
+    margin-bottom: 10px;
+}
+
+/* Línea divisoria */
+.intro-divider {
+    width: 60%;
+    height: 2px;
+    background-color: #6b1d1d;
+    margin: 20px 0;
+}
+
+/* Botón */
+.intro-button {
+    margin-top: 40px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 2px solid #6b1d1d;
+    background-color: #fff;
+    color: #6b1d1d;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.intro-button:hover {
+    background-color: #6b1d1d;
+    color: #fff;
+}

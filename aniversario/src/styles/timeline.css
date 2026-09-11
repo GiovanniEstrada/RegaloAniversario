@@ -1,0 +1,65 @@
+.timeline-container {
+  position: relative;
+  margin: 0 auto;
+  padding: 40px 0;
+  width: 80%;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth; /* scroll fluido */
+}
+
+/* Línea fija */
+.timeline-line {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #6b1d1d;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* Items */
+.timeline-item {
+  display: flex;
+  justify-content: flex-start;
+  margin: 60px 0;
+  position: relative;
+  transition: opacity 1s ease, transform 1s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.timeline-item.right {
+  justify-content: flex-end;
+}
+
+.timeline-item.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item.fade-out {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Contenido */
+.timeline-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 280px;
+  text-align: center;
+}
+
+/* Imagen */
+.timeline-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  pointer-events: none; /* evita bloquear scroll */
+}

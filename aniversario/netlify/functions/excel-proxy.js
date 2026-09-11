@@ -1,5 +1,5 @@
-const fetch = "node-fetch";
-const XLSX = "xlsx";
+const fetch = require("node-fetch");
+const XLSX = require("xlsx");
 
 exports.handler = async () => {
   const excelUrl = "https://docs.google.com/spreadsheets/d/1F1awuTSWpF-rXco6sHPYD5JGe4Ya_UPmbVItwiQ9oNM/export?format=xlsx"; // reemplaza con el ID real

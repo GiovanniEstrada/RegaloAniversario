@@ -61,7 +61,7 @@
 
 // export default App;
 
-import React, { useState, useEffect } from "react";
+import  { useState } from "react";
 import IntroPage from "./pages/IntroPage";
 import Home from "./pages/Home";
 

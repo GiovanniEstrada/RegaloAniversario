@@ -1,34 +1,42 @@
-import React, { useEffect, useRef, useState } from "react";
-import ImagenRecuerdo from "./ImagenRecuerdo";
+import React, { useState } from "react";
 
-function TimelineItem({ fecha, recuerdo, id, lado }) {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setVisible(entry.isIntersecting);
-      },
-      { threshold: 0.3 } // se activa cuando 30% del item es visible
-    );
-
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
+const TimelineItem = ({ item, position }) => {
+  const [showOverlay, setShowOverlay] = useState(false);
 
   return (
-    <div
-      ref={ref}
-      className={`timeline-item ${lado} ${visible ? "fade-in" : "fade-out"}`}
-    >
+    <div className={`timeline-item ${position}`}>
       <div className="timeline-content">
-        <ImagenRecuerdo id={id} recuerdo={recuerdo} />
-        <h3 className="timeline-title">{recuerdo}</h3>
-        <p className="timeline-date">📅 {fecha}</p>
+        <p className="timeline-date">📅 {item.Fecha}</p>
+
+        <img
+          src={`/.netlify/functions/drive-proxy?id=${item.ID}`}
+          alt={item.Recuerdo}
+          className="timeline-image"
+        />
+
+        <button
+          className="timeline-button"
+          onClick={() => setShowOverlay(true)}
+        >
+          Mostrar recuerdo
+        </button>
       </div>
+
+      {showOverlay && (
+        <div className="timeline-overlay" onClick={() => setShowOverlay(false)}>
+          <div className="overlay-message">
+            <p>{item.Recuerdo}</p>
+            <button
+              className="overlay-close"
+              onClick={() => setShowOverlay(false)}
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default TimelineItem;

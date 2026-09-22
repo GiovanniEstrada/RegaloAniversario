@@ -16,11 +16,12 @@
         "npm:@testing-library/react@^16.3.2",
         "npm:@testing-library/user-event@^13.5.0",
         "npm:firebase@^12.15.0",
-        "npm:node-fetch@^3.3.2",
+        "npm:node-fetch@^2.7.0",
         "npm:react-dom@^19.2.7",
         "npm:react-scripts@5.0.1",
         "npm:react@^19.2.7",
-        "npm:web-vitals@^2.1.4"
+        "npm:web-vitals@^2.1.4",
+        "npm:xlsx@~0.18.5"
       ]
     }
   }

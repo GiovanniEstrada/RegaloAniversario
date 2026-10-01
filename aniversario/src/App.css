@@ -71,21 +71,9 @@
   position: absolute;
   width: 20px;
   height: 20px;
-  background: #d4af37; /* dorado */
-  clip-path: polygon(
-    50% 0%,
-    61% 19%,
-    98% 19%,
-    79% 38%,
-    85% 75%,
-    50% 60%,
-    15% 75%,
-    21% 38%,
-    2% 19%,
-    39% 19%
-  ); /* forma de corazón */
   opacity: 0.7;
   animation: floatHeart 8s ease-in-out infinite;
+  color: #c5203e;
 }
 
 /* Animación */
@@ -95,17 +83,14 @@
     opacity: 0;
   }
   50% {
-    opacity: 1;
+    opacity: 0.7;
   }
   100% {
-    transform: translateY(-10vh) scale(1.2);
+    transform: translateY(-10vh) scale(2.2);
     opacity: 0;
   }
 }
 
-.heart:nth-child(odd) {
-  background: #ff4d6d; /* rojo romántico */
-}
 
 .heart:nth-child(1) { left: 5%;  animation-delay: 0s;  transform: scale(1); }
 .heart:nth-child(2) { left: 15%; animation-delay: 2s;  transform: scale(1.3); }

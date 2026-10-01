@@ -24,7 +24,7 @@ function Home() {
     <div style={{ maxWidth: "900px", margin: "0 auto", padding: "20px" }}>
       <Header
         title="Cronograma de Recuerdos"
-        subtitle="Momentos especiales en el tiempo"
+        subtitle="Nunca olvidemos cada paso que damos, es lo que nos ha traido hasta donde hoy estamos"
       />
       {error && <ErrorMessage message={error} />}
       <Timeline data={data} />

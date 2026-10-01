@@ -22,7 +22,7 @@ const Timeline = ({ data = [] }) => {
              Q 200 1200 500 1600 
              Q 800 2000 500 2400"
           stroke="#6b1d1d"
-          strokeWidth="4"
+          strokeWidth="10"
           fill="none"
         />
       </svg>
@@ -46,6 +46,7 @@ const Timeline = ({ data = [] }) => {
               <TimelineItem
                 key={globalIndex}
                 item={item}
+                index={globalIndex}
                 position={position}
               />
             );

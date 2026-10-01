@@ -23,21 +23,18 @@ function App() {
   return (
     <>
       <div className="background-animation">
-        {Array.from({ length: 15 }).map((_, i) => (
-          <span key={i} className="heart"></span>
+        {Array.from({ length: 10 }).map((_, i) => (
+          <h1
+            key={i}
+            src="src\assets\icons\heart.png"
+            alt="corazón"
+            className="heart"
+          >❤</h1>
         ))}
       </div>
 
-      {/* Audio ambiental global */}
-      <audio ref={audioRef} autoPlay loop>
-        <source src="/assets/audio/Reunited.mp3" type="audio/mp3" />
-        Tu navegador no soporta audio.
-      </audio>
 
-      {/* Botón global de mute/unmute */}
-      <button className="global-mute" onClick={toggleMute}>
-        {muted ? "🔇" : "🔊"}
-      </button>
+     
 
       {showIntro ? (
         <IntroPage onSkip={handleSkipIntro} />

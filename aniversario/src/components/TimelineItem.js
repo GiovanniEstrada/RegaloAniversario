@@ -1,41 +1,51 @@
 import React, { useState } from "react";
 
-const TimelineItem = ({ item, position }) => {
+const TimelineItem = ({ item, index }) => {
   const [showOverlay, setShowOverlay] = useState(false);
 
+  // Alternar lado y rotación
+  const sideClass = index % 2 === 0 ? "left" : "right";
+  const tiltClass = index % 3 === 0 ? "tilt-left" : "tilt-right";
+
   return (
-    <div className={`timeline-item ${position}`}>
-      <div className="timeline-content">
-        <p className="timeline-date">📅 {item.Fecha}</p>
-
-        <img
-          src={`/.netlify/functions/drive-proxy?id=${item.ID}`}
-          alt={item.Recuerdo}
-          className="timeline-image"
-        />
-
+    <>
+    <div className={`timeline-item ${index % 2 === 0 ? "left tilt-left" : "right tilt-right"}`}>
+  <div className="timeline-card">
+    <div className="timeline-image-container">
+      <img
+        src={`/.netlify/functions/drive-proxy?id=${item.ID}`}
+        alt={item.Recuerdo}
+        className="timeline-image"
+      />
+      <div className="timeline-hover">
         <button
           className="timeline-button"
           onClick={() => setShowOverlay(true)}
         >
-          Mostrar recuerdo
+          Ver recuerdo
         </button>
       </div>
-
-      {showOverlay && (
-        <div className="timeline-overlay" onClick={() => setShowOverlay(false)}>
-          <div className="overlay-message">
-            <p>{item.Recuerdo}</p>
-            <button
-              className="overlay-close"
-              onClick={() => setShowOverlay(false)}
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      )}
     </div>
+    <p className="timeline-date">{item.Fecha}</p>
+  </div>
+  </div>
+
+  {/* Overlay debe ir aquí, fuera del card */}
+  {showOverlay && (
+    <div className="timeline-overlay" onClick={() => setShowOverlay(false)}>
+      <div className="overlay-message">
+        <p>{item.Recuerdo}</p>
+        <button
+          className="overlay-close"
+          onClick={() => setShowOverlay(false)}
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  )}
+</>
+
   );
 };
 

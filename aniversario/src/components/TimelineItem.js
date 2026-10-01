@@ -3,9 +3,6 @@ import React, { useState } from "react";
 const TimelineItem = ({ item, index }) => {
   const [showOverlay, setShowOverlay] = useState(false);
 
-  // Alternar lado y rotación
-  const sideClass = index % 2 === 0 ? "left" : "right";
-  const tiltClass = index % 3 === 0 ? "tilt-left" : "tilt-right";
 
   return (
     <>
